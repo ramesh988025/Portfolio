@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ramesh | Developer Portfolio</title>
+    <meta
+      name="description"
+      content="Interactive editable portfolio for Ramesh, Full Stack Developer."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="loader" aria-hidden="true">
+      <div class="spinner"></div>
+      <p>Loading portfolio...</p>
+    </div>
+
+    <header class="topbar glass">
+      <a href="#hero" class="brand magnetic">Ramesh</a>
+      <button id="menuBtn" class="icon-btn" aria-label="Toggle Menu">☰</button>
+      <nav id="nav" class="nav">
+        <a href="#hero" class="nav-link active">Home</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#timeline" class="nav-link">Journey</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+      <button id="themeToggle" class="icon-btn magnetic" aria-label="Toggle theme">🌙</button>
+    </header>
+
+    <main>
+      <section id="hero" class="section hero reveal">
+        <div class="hero-content floating glass">
+          <p class="pill">Open to opportunities</p>
+          <h1>
+            Hi, I'm <span class="accent">Ramesh</span>
+          </h1>
+          <h2>
+            <span
+              id="editableRole"
+              class="editable"
+              contenteditable="true"
+              data-key="heroRole"
+              data-placeholder="Full Stack Developer"
+            ></span>
+          </h2>
+          <p
+            class="editable"
+            contenteditable="true"
+            data-key="heroTagline"
+            data-placeholder="Write a short personal tagline here..."
+          ></p>
+          <p class="typing-line">I build with <span id="typingText"></span><span class="cursor">|</span></p>
+          <div class="cta-row">
+            <a href="#projects" class="btn magnetic">View Projects</a>
+            <a href="#contact" class="btn secondary magnetic">Contact Me</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="section reveal">
+        <h2 class="section-title">About</h2>
+        <div class="about-wrap">
+          <div class="profile-placeholder tilt-card" aria-label="Profile image placeholder">
+            <span>Profile Image</span>
+          </div>
+          <div
+            class="glass editable block-edit"
+            contenteditable="true"
+            data-key="aboutText"
+            data-placeholder="Write about yourself, your interests, and your goals..."
+          ></div>
+        </div>
+      </section>
+
+      <section id="skills" class="section reveal">
+        <div class="section-head">
+          <h2 class="section-title">Skills</h2>
+          <button id="addSkillBtn" class="btn secondary">+ Add Skill</button>
+        </div>
+        <div id="skillsGrid" class="skills-grid"></div>
+      </section>
+
+      <section id="projects" class="section reveal">
+        <div class="section-head">
+          <h2 class="section-title">Projects</h2>
+          <button id="addProjectBtn" class="btn secondary">+ Add Project</button>
+        </div>
+        <div id="projectsGrid" class="projects-grid"></div>
+      </section>
+
+      <section id="timeline" class="section reveal">
+        <div class="section-head">
+          <h2 class="section-title">Experience & Education</h2>
+          <button id="addTimelineBtn" class="btn secondary">+ Add Item</button>
+        </div>
+        <div id="timelineList" class="timeline"></div>
+      </section>
+
+      <section id="contact" class="section reveal">
+        <h2 class="section-title">Contact</h2>
+        <form id="contactForm" class="glass form">
+          <label>
+            Name
+            <input type="text" name="name" placeholder="Your name" required />
+          </label>
+          <label>
+            Email
+            <input type="email" name="email" placeholder="you@example.com" required />
+          </label>
+          <label>
+            Message
+            <textarea name="message" rows="5" placeholder="Write your message..." required></textarea>
+          </label>
+          <button class="btn magnetic" type="submit">Send Message</button>
+          <p id="formMsg" aria-live="polite"></p>
+        </form>
+
+        <div class="socials">
+          <a
+            class="editable social-link"
+            contenteditable="true"
+            data-key="socialGithub"
+            data-placeholder="GitHub link"
+          ></a>
+          <a
+            class="editable social-link"
+            contenteditable="true"
+            data-key="socialLinkedin"
+            data-placeholder="LinkedIn link"
+          ></a>
+          <a
+            class="editable social-link"
+            contenteditable="true"
+            data-key="socialOther"
+            data-placeholder="Other social link"
+          ></a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer glass">
+      <p>© <span id="year"></span> Ramesh. All rights reserved.</p>
+      <a href="#hero" class="magnetic">Back to top ↑</a>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
