@@ -2,6 +2,7 @@
   --bg: #666d74;
   --panel: #0e1018;
   --panel-2: #151821;
+  --bg-soft: #151821;
   --text: #f5f7fb;
   --muted: #a8acb8;
   --line: rgba(255, 255, 255, 0.12);
@@ -14,6 +15,7 @@
   --bg: #d9dde3;
   --panel: #f5f7fb;
   --panel-2: #ffffff;
+  --bg-soft: #ffffff;
   --text: #0f172a;
   --muted: #4b5563;
   --line: rgba(15, 23, 42, 0.12);
@@ -26,9 +28,10 @@
 html { scroll-behavior: smooth; }
 body {
   margin: 0;
-  font-family: Inter, system-ui, sans-serif;
-  background: var(--bg);
+  font-family: 'Inter', system-ui, sans-serif;
   color: var(--text);
+  background: var(--bg);
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
 #loader {
@@ -39,8 +42,9 @@ body {
   place-content: center;
   gap: 0.8rem;
   background: var(--panel);
+  transition: opacity 0.3s ease;
 }
-#loader.hidden { opacity: 0; pointer-events: none; transition: opacity 0.3s ease; }
+#loader.hidden { opacity: 0; pointer-events: none; }
 .spinner {
   width: 44px;
   height: 44px;
@@ -207,6 +211,7 @@ main {
 
 .cta-row { display: flex; gap: 0.65rem; flex-wrap: wrap; margin-top: 1rem; }
 .btn {
+  display: inline-flex;
   border: 0;
   border-radius: 0.65rem;
   padding: 0.7rem 1rem;
@@ -214,7 +219,9 @@ main {
   cursor: pointer;
   background: linear-gradient(100deg, var(--accent), var(--accent-2));
   color: #fff;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
+.btn:hover { transform: translateY(-2px) scale(1.02); }
 .btn.secondary {
   border: 1px solid var(--line);
   background: transparent;
