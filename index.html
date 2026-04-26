@@ -1,155 +1,161 @@
 <!doctype html>
-<html lang="en" data-theme="light">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ramesh | Developer Portfolio</title>
+    <title>Front-End Web Builder | Fiverr Landing Page</title>
     <meta
       name="description"
-      content="Interactive editable portfolio for Ramesh, Full Stack Developer."
+      content="Responsive Fiverr gig landing page for front-end web building with smooth organic animations."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Merriweather:wght@400;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div id="loader" aria-hidden="true">
-      <div class="spinner"></div>
-      <p>Loading portfolio...</p>
+    <div class="bg-orbs" aria-hidden="true">
+      <span class="orb orb-1"></span>
+      <span class="orb orb-2"></span>
+      <span class="orb orb-3"></span>
     </div>
 
-    <header class="topbar glass">
-      <a href="#hero" class="brand magnetic">Ramesh</a>
-      <button id="menuBtn" class="icon-btn" aria-label="Toggle Menu">☰</button>
+    <header class="topbar">
+      <a href="#hero" class="logo">YourName<span>.dev</span></a>
+      <button id="menuBtn" class="menu-btn" aria-label="Toggle navigation">☰</button>
       <nav id="nav" class="nav">
-        <a href="#hero" class="nav-link active">Home</a>
-        <a href="#about" class="nav-link">About</a>
-        <a href="#skills" class="nav-link">Skills</a>
-        <a href="#projects" class="nav-link">Projects</a>
-        <a href="#timeline" class="nav-link">Journey</a>
-        <a href="#contact" class="nav-link">Contact</a>
+        <a href="#services">Services</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#about">About</a>
+        <a href="#contact" class="btn btn-sm">Get a Quote</a>
       </nav>
-      <button id="themeToggle" class="icon-btn magnetic" aria-label="Toggle theme">🌙</button>
     </header>
 
     <main>
-      <section id="hero" class="section hero reveal">
-        <div class="hero-content floating glass">
-          <p class="pill">Open to opportunities</p>
+      <section id="hero" class="hero section">
+        <div class="hero-copy reveal-up">
+          <p class="badge">Front-End Web Builder on Fiverr</p>
           <h1>
-            Hi, I'm <span class="accent">Ramesh</span>
+            Transforming ideas into
+            <span>stunning web experiences</span>
           </h1>
-          <h2>
-            <span
-              id="editableRole"
-              class="editable"
-              contenteditable="true"
-              data-key="heroRole"
-              data-placeholder="Full Stack Developer"
-            ></span>
-          </h2>
-          <p
-            class="editable"
-            contenteditable="true"
-            data-key="heroTagline"
-            data-placeholder="Write a short personal tagline here..."
-          ></p>
-          <p class="typing-line">I build with <span id="typingText"></span><span class="cursor">|</span></p>
-          <div class="cta-row">
-            <a href="#projects" class="btn magnetic">View Projects</a>
-            <a href="#contact" class="btn secondary magnetic">Contact Me</a>
+          <p class="lead">
+            I build responsive, high-performance front-ends with smooth interactions and a polished,
+            modern visual flow.
+          </p>
+          <div class="hero-actions">
+            <a href="#contact" class="btn">Let's Build Something Great</a>
+            <a href="#portfolio" class="btn btn-ghost">View My Work</a>
           </div>
         </div>
-      </section>
 
-      <section id="about" class="section reveal">
-        <h2 class="section-title">About</h2>
-        <div class="about-wrap">
-          <div class="profile-placeholder tilt-card" aria-label="Profile image placeholder">
-            <span>Profile Image</span>
-          </div>
-          <div
-            class="glass editable block-edit"
-            contenteditable="true"
-            data-key="aboutText"
-            data-placeholder="Write about yourself, your interests, and your goals..."
-          ></div>
+        <div class="hero-visual reveal-up delay-1" aria-hidden="true">
+          <canvas id="blobCanvas" width="420" height="420"></canvas>
         </div>
       </section>
 
-      <section id="skills" class="section reveal">
-        <div class="section-head">
-          <h2 class="section-title">Skills</h2>
-          <button id="addSkillBtn" class="btn secondary">+ Add Skill</button>
+      <section id="interactive-question" class="section reveal-up">
+        <h2>What needs to come back alive?</h2>
+        <p class="section-sub">Choose one so I can tailor the best approach for your project.</p>
+
+        <div class="options-grid">
+          <article class="option-card" data-answer="new website">
+            <h3>A Brand New Online Presence</h3>
+            <p>Launch your vision from scratch with scalable structure and clean UI.</p>
+          </article>
+          <article class="option-card" data-answer="modern redesign">
+            <h3>A Modern Redesign</h3>
+            <p>Refresh an outdated look and make your site feel current and premium.</p>
+          </article>
+          <article class="option-card" data-answer="performance upgrades">
+            <h3>Enhanced Performance & UX</h3>
+            <p>Boost speed, responsiveness, and interaction quality across devices.</p>
+          </article>
+          <article class="option-card" data-answer="custom feature">
+            <h3>Custom Interactive Feature</h3>
+            <p>Add unique animated sections and bespoke front-end functionality.</p>
+          </article>
         </div>
-        <div id="skillsGrid" class="skills-grid"></div>
+
+        <div id="followUp" class="follow-up" aria-live="polite"></div>
       </section>
 
-      <section id="projects" class="section reveal">
-        <div class="section-head">
-          <h2 class="section-title">Projects</h2>
-          <button id="addProjectBtn" class="btn secondary">+ Add Project</button>
+      <section id="services" class="section">
+        <h2 class="reveal-up">My Expertise</h2>
+        <div class="services-grid">
+          <article class="service reveal-up">
+            <h3>Responsive Web Design</h3>
+            <p>Layouts that look excellent on mobile, tablet, laptop, and large desktop screens.</p>
+          </article>
+          <article class="service reveal-up delay-1">
+            <h3>Smooth UI Animations</h3>
+            <p>Purposeful transitions and micro-interactions that improve engagement.</p>
+          </article>
+          <article class="service reveal-up delay-2">
+            <h3>Performance Optimization</h3>
+            <p>Cleaner code and lighter assets for improved page speed and user retention.</p>
+          </article>
+          <article class="service reveal-up delay-3">
+            <h3>Modern JavaScript</h3>
+            <p>Dynamic interactions using maintainable, production-ready front-end logic.</p>
+          </article>
         </div>
-        <div id="projectsGrid" class="projects-grid"></div>
       </section>
 
-      <section id="timeline" class="section reveal">
-        <div class="section-head">
-          <h2 class="section-title">Experience & Education</h2>
-          <button id="addTimelineBtn" class="btn secondary">+ Add Item</button>
+      <section id="portfolio" class="section">
+        <h2 class="reveal-up">Featured Projects</h2>
+        <div class="portfolio-grid">
+          <article class="project reveal-up">
+            <div class="project-thumb">Project One</div>
+            <h3>Startup Landing Experience</h3>
+            <p>Conversion-focused hero, smooth scroll storytelling, and responsive CTA flow.</p>
+          </article>
+          <article class="project reveal-up delay-1">
+            <div class="project-thumb">Project Two</div>
+            <h3>E-commerce Product UI</h3>
+            <p>Interactive product cards, animated filters, and mobile-first performance pass.</p>
+          </article>
+          <article class="project reveal-up delay-2">
+            <div class="project-thumb">Project Three</div>
+            <h3>Personal Brand Site</h3>
+            <p>Minimal theme system, content animation sequencing, and polished navigation.</p>
+          </article>
         </div>
-        <div id="timelineList" class="timeline"></div>
       </section>
 
-      <section id="contact" class="section reveal">
-        <h2 class="section-title">Contact</h2>
-        <form id="contactForm" class="glass form">
-          <label>
-            Name
-            <input type="text" name="name" placeholder="Your name" required />
-          </label>
-          <label>
-            Email
-            <input type="email" name="email" placeholder="you@example.com" required />
-          </label>
-          <label>
-            Message
-            <textarea name="message" rows="5" placeholder="Write your message..." required></textarea>
-          </label>
-          <button class="btn magnetic" type="submit">Send Message</button>
-          <p id="formMsg" aria-live="polite"></p>
+      <section id="about" class="section about">
+        <div class="about-copy reveal-up">
+          <h2>About Me</h2>
+          <p>
+            I'm a front-end web developer focused on building interfaces that are visually clean,
+            highly responsive, and user-first. I blend modern design principles with practical
+            development so your website looks great and performs even better.
+          </p>
+          <p>
+            My Fiverr gig is built for clients who want a reliable, detail-oriented developer that can
+            translate ideas into production-ready front-end experiences.
+          </p>
+        </div>
+      </section>
+
+      <section id="contact" class="section contact reveal-up">
+        <h2>Ready to Elevate Your Web Presence?</h2>
+        <p class="section-sub">Share your idea and I'll send a tailored build plan.</p>
+        <form class="contact-form">
+          <input type="text" placeholder="Your Name" required />
+          <input type="email" placeholder="Your Email" required />
+          <input type="text" placeholder="Project Type" required />
+          <textarea rows="5" placeholder="Tell me about your project..." required></textarea>
+          <button type="submit" class="btn">Send Message</button>
         </form>
-
-        <div class="socials">
-          <a
-            class="editable social-link"
-            contenteditable="true"
-            data-key="socialGithub"
-            data-placeholder="GitHub link"
-          ></a>
-          <a
-            class="editable social-link"
-            contenteditable="true"
-            data-key="socialLinkedin"
-            data-placeholder="LinkedIn link"
-          ></a>
-          <a
-            class="editable social-link"
-            contenteditable="true"
-            data-key="socialOther"
-            data-placeholder="Other social link"
-          ></a>
-        </div>
       </section>
     </main>
 
-    <footer class="footer glass">
-      <p>© <span id="year"></span> Ramesh. All rights reserved.</p>
-      <a href="#hero" class="magnetic">Back to top ↑</a>
+    <footer class="footer">
+      <p>© <span id="year"></span> YourName. Built with care for Fiverr clients.</p>
     </footer>
 
     <script src="script.js"></script>
